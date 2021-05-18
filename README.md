@@ -1,4 +1,4 @@
-# lixo
+# Learning Flutter :)
 
 A new Flutter project.
 
