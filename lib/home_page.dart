@@ -15,6 +15,34 @@ class HomePageState extends State<HomePage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Column
+        (children: [
+            UserAccountsDrawerHeader(
+            accountName: Text('Ricardo dos Santos'), 
+            accountEmail: Text('ricardo@ricardo.com'),
+            currentAccountPicture: Image.
+            network('https://www.morrademedo.com/wp-content/uploads/2014/09/Hypno.gif'),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Inicio'),
+              subtitle: Text('tela de início'),
+              onTap: (){
+                print('home');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Logout'),
+              subtitle: Text('Finalizar sessão'),
+              onTap: (){
+                Navigator.of(context).pushReplacementNamed('/');
+              },
+            )
+        ],
+        ),
+      ),
       appBar: AppBar(
         title: Text('Home Page'),
         actions: [
@@ -24,32 +52,10 @@ class HomePageState extends State<HomePage>{
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        child: ListView(
-        //mainAxisAlignment: MainAxisAlignment.center,
+        child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text('Contador: $counter'),
-          Container(height: 10),
-          CustomSwitch(),
-          Container(height: 10),
-          CustomSwitch(),
-          Container(height: 10),
-          CustomSwitch(),
-          Container(height: 10),
-          CustomSwitch(),
-          Container(height: 10),
-          CustomSwitch(),
-          Container(height: 10),
-          CustomSwitch(),
-          Container(height: 10),
-          CustomSwitch(),
-          Container(height: 10),
-          CustomSwitch(),
-          Container(height: 10),
-          CustomSwitch(),
-          Container(height: 10),
-          CustomSwitch(),
-          Container(height: 10),
-          CustomSwitch(),
           Container(height: 10),
           CustomSwitch(),
           Container(height: 50),
